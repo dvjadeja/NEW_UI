@@ -18,7 +18,7 @@ const StyledAlignedImage = styled.img`
   align-self: center;
 `;
 
-const Topbar = ({ back }) => {
+const Topbar = ({ back, title }) => {
   return (
     <>
       {back ? (
@@ -28,7 +28,7 @@ const Topbar = ({ back }) => {
           </Col>
           <Col style={{ padding: 14 }}>
             <div className="d-flex justify-content-center align-items-center">
-              <h5>Electrical Services</h5>
+              <h5>{title}</h5>
             </div>
           </Col>
           <Col style={{ textAlign: "right" }}>

@@ -7,7 +7,6 @@ import electricalServiceBadge from "../assests/images/electricalServiceBadge.svg
 import pinkImg from "../assests/images/pinkImg.svg";
 import orangeImage from "../assests/images/orangeImage.svg";
 import blackImg from "../assests/images/blackImg.svg";
-import { withTheme } from "styled-components";
 
 const ElectricalService = () => {
   return (
@@ -25,7 +24,7 @@ const ElectricalService = () => {
             paddingBottom: 20,
           }}
         >
-          <Topbar back={back} />
+          <Topbar back={back} title="Electrical Services" />
           <Row className="mt-3">
             <Col style={{ padding: 15 }}>
               <Row style={{ paddingLeft: "10px" }}>
