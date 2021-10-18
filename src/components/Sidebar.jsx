@@ -14,11 +14,18 @@ const Sidebar = () => {
           <Image src={Avatar} />
         </Col>
       </Row>
-      <Navbar bg="white" variant="light" expand="lg" style={{ width: "99%" }}>
+      <Navbar bg="white" variant="light" expand="lg">
         <Container fluid={true}>
-          <Nav className="ms-auto me-auto d-flex flex-column">
+          <Nav className="d-flex flex-column" style={{ width: "99%" }}>
             <Nav.Link href="#home">
-              <div className="menu-item">
+              <div
+                className="menu-item"
+                style={{
+                  boxShadow: "1px 8px 10px -5px rgba(0,0,0,0.72)",
+                  padding: 5,
+                  borderRadius: 5,
+                }}
+              >
                 <Image src={home} className="menu-item-icon" />
                 <span>Home</span>
               </div>

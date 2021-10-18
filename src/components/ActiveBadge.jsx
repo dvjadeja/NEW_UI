@@ -25,7 +25,7 @@ const ActiveBadge = ({
           width: "95%",
         }}
       >
-        <Row>
+        <Row style={{ paddingRight: "0.73rem" }}>
           <Col xs={7} md={7}>
             <div
               style={{
