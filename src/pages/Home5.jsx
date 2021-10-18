@@ -53,6 +53,7 @@ const Home5 = () => {
           className="main-container"
           style={{
             marginTop: 20,
+            marginBottom: 20,
             marginRight: 20,
             borderRadius: 20,
             paddingBottom: 10,
@@ -60,7 +61,7 @@ const Home5 = () => {
           }}
         >
           <Topbar back={back} title="" />
-          <Row className="mt-3">
+          <Row className="mt-3 mb-3">
             <Col style={{ padding: 15, paddingBottom: 0 }}>
               <Row style={{ paddingLeft: 10 }}>
                 <Col className="mb-3" md={2}>

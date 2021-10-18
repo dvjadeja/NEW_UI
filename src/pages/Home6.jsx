@@ -22,7 +22,7 @@ const Home6 = () => {
         >
           <Topbar back={back} title="What's New?" />
 
-          <Row className="mt-3">
+          <Row className="mt-3 mb-3">
             <Col
               style={{
                 display: "flex",
@@ -32,7 +32,7 @@ const Home6 = () => {
                 paddingLeft: 30,
               }}
             >
-              <Image src={covidImg} width="100%" />
+              <Image src={covidImg} width="80%" />
             </Col>
             <Col>
               <Row style={{ paddingRight: 25 }}>
