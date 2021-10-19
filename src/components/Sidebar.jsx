@@ -1,5 +1,13 @@
 import React from "react";
-import { Image, Nav, Row, Navbar, Container, Col } from "react-bootstrap";
+import {
+  Image,
+  Nav,
+  Row,
+  Navbar,
+  Container,
+  Col,
+  NavLink,
+} from "react-bootstrap";
 import Avatar from "../assests/images/Avatar.svg";
 import home from "../assests/images/home.svg";
 import console from "../assests/images/console.svg";
@@ -19,7 +27,7 @@ const Sidebar = () => {
       <Navbar bg="white" variant="light" expand="lg">
         <Container fluid={true}>
           <Nav className="d-flex flex-column" style={{ width: "99%" }}>
-            <Nav.Link href="/home" onClick={() => setOnClick(1)}>
+            <NavLink href="/" onClick={() => setOnClick(1)}>
               <div
                 className={
                   onclick === 1 ? "menu-item menu-item-active" : "menu-item"
@@ -28,11 +36,11 @@ const Sidebar = () => {
                 <Image src={home} className="menu-item-icon" />
                 <span>Home</span>
               </div>
-            </Nav.Link>
+            </NavLink>
             <Nav.Link href="/games" onClick={() => setOnClick(2)}>
               <div
                 className={
-                  onclick === 1 ? "menu-item menu-item-active" : "menu-item"
+                  onclick === 2 ? "menu-item menu-item-active" : "menu-item"
                 }
               >
                 <Image src={console} className="menu-item-icon" />
