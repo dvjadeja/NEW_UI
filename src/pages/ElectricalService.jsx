@@ -159,7 +159,7 @@ const ElectricalService = () => {
                 <Col style={{ margin: "auto" }} xs={2}>
                   <span className="round">1</span>
                 </Col>
-                <Col style={{ background: "#f8f8f8" }}>
+                <Col style={{ background: "#f8f8f8", textAlign: "left" }}>
                   <p>Step 1</p>
                   <p style={{ color: "grey" }}>
                     Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -170,7 +170,7 @@ const ElectricalService = () => {
                 <Col style={{ margin: "auto" }} xs={2}>
                   <span className="round">2</span>
                 </Col>
-                <Col style={{ background: "#f8f8f8" }}>
+                <Col style={{ background: "#f8f8f8", textAlign: "left" }}>
                   <p>Step 2</p>
                   <p style={{ color: "grey" }}>
                     Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -181,7 +181,7 @@ const ElectricalService = () => {
                 <Col style={{ margin: "auto" }} xs={2}>
                   <span className="round">3</span>
                 </Col>
-                <Col style={{ background: "#f8f8f8" }}>
+                <Col style={{ background: "#f8f8f8", textAlign: "left" }}>
                   <p>Step 3</p>
                   <p style={{ color: "grey" }}>
                     Lorem ipsum dolor sit amet, consetetur sadipscing
