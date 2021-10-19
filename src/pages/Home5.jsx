@@ -63,47 +63,49 @@ const Home5 = () => {
           <Topbar back={back} title="" />
           <Row className="mt-3 mb-3">
             <Col style={{ padding: 15, paddingBottom: 0 }}>
-              <Row style={{ paddingLeft: 10 }}>
-                <Col className="mb-3" md={2}>
-                  <div
-                    className="badgeActive"
-                    style={{
-                      background: "#fad6a5 !important",
-                      borderRadius: 20,
-                      padding: 10,
-                      fontSize: 14,
-                    }}
-                  >
-                    <span>Active</span>
-                  </div>
-                </Col>
-                <Col md={2}>
-                  <div
-                    className="badge"
-                    style={{
-                      background: "white !important",
-                      borderRadius: 20,
-                      padding: 10,
-                      fontSize: 14,
-                    }}
-                  >
-                    <span>Upcoming</span>
-                  </div>
-                </Col>
-                <Col md={1} style={{ textAlign: "left" }}>
-                  <div
-                    className="badge"
-                    style={{
-                      background: "white !important",
-                      borderRadius: 20,
-                      padding: 10,
-                      fontSize: 14,
-                    }}
-                  >
-                    <span>History</span>
-                  </div>
-                </Col>
-              </Row>
+              <div style={{ width: "50%" }}>
+                <Row style={{ paddingLeft: 10 }}>
+                  <Col className="mb-3">
+                    <div
+                      className="badgeActive"
+                      style={{
+                        background: "#fad6a5 !important",
+                        borderRadius: 20,
+                        padding: 8,
+                        fontSize: 14,
+                      }}
+                    >
+                      <span>Active</span>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div
+                      className="badge"
+                      style={{
+                        background: "white !important",
+                        borderRadius: 20,
+                        padding: 10,
+                        fontSize: 14,
+                      }}
+                    >
+                      <span>Upcoming</span>
+                    </div>
+                  </Col>
+                  <Col style={{ textAlign: "center" }}>
+                    <div
+                      className="badge"
+                      style={{
+                        background: "white !important",
+                        borderRadius: 20,
+                        padding: 10,
+                        fontSize: 14,
+                      }}
+                    >
+                      <span>History</span>
+                    </div>
+                  </Col>
+                </Row>
+              </div>
             </Col>
           </Row>
 
