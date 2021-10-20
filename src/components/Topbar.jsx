@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Nav = styled.nav`
   width: 100%;
@@ -24,7 +25,9 @@ const Topbar = ({ back, title }) => {
       {back ? (
         <Row>
           <Col style={{ textAlign: "left" }}>
-            <StyledAlignedImage src={back} />
+            <Link to="/">
+              <StyledAlignedImage src={back} />
+            </Link>
           </Col>
           <Col style={{ padding: 14 }}>
             <div className="d-flex justify-content-center align-items-center">
