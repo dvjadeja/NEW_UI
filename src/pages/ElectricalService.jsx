@@ -4,25 +4,25 @@ import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 import back from "../assests/images/back.svg";
 import electricalServiceBadge from "../assests/images/electricalServiceBadge.svg";
-import highVoltage from "../assests/images/highVoltage.svg";
-import electricalServicesPink from "../assests/images/electricalServicesPink.svg";
+// import highVoltage from "../assests/images/highVoltage.svg";
+// import electricalServicesPink from "../assests/images/electricalServicesPink.svg";
 import pinkImg from "../assests/images/pinkImg.svg";
 import orangeImage from "../assests/images/orangeImage.svg";
 import blackImg from "../assests/images/blackImg.svg";
 
-const detailCardInfo = [
-  {
-    index: 1,
-    topBarTitle: "Electrical Services",
-    logo: electricalServiceBadge,
-  },
-  { index: 2, topBarTitle: "High Voltage", logo: highVoltage },
-  {
-    index: 3,
-    topBarTitle: "Electrical Services",
-    logo: electricalServicesPink,
-  },
-];
+// const detailCardInfo = [
+//   {
+//     index: 1,
+//     topBarTitle: "Electrical Services",
+//     logo: electricalServiceBadge,
+//   },
+//   { index: 2, topBarTitle: "High Voltage", logo: highVoltage },
+//   {
+//     index: 3,
+//     topBarTitle: "Electrical Services",
+//     logo: electricalServicesPink,
+//   },
+// ];
 const ElectricalService = () => {
   const [activeOptFilter, setActiveOptFilter] = useState(1);
   return (
