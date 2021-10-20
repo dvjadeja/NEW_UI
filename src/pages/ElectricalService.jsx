@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Col, Image, Row } from "react-bootstrap";
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 import back from "../assests/images/back.svg";
 import electricalServiceBadge from "../assests/images/electricalServiceBadge.svg";
+import highVoltage from "../assests/images/highVoltage.svg";
+import electricalServicesPink from "../assests/images/electricalServicesPink.svg";
 import pinkImg from "../assests/images/pinkImg.svg";
 import orangeImage from "../assests/images/orangeImage.svg";
 import blackImg from "../assests/images/blackImg.svg";
 
+const detailCardInfo = [
+  {
+    index: 1,
+    topBarTitle: "Electrical Services",
+    logo: electricalServiceBadge,
+  },
+  { index: 2, topBarTitle: "High Voltage", logo: highVoltage },
+  {
+    index: 3,
+    topBarTitle: "Electrical Services",
+    logo: electricalServicesPink,
+  },
+];
 const ElectricalService = () => {
+  const [activeOptFilter, setActiveOptFilter] = useState(1);
   return (
     <>
       <div>
@@ -24,18 +40,23 @@ const ElectricalService = () => {
             paddingBottom: 20,
           }}
         >
-          <Topbar back={back} title="Electrical Services" />
+          <Topbar back={back} title="Electrical Services" link="rewards" />
           <Row className="mt-3">
             <Col style={{ padding: 15 }}>
               <Row style={{ paddingLeft: "10px" }}>
                 <Col className="mb-3 me-2">
                   <div
-                    className="badgeActive"
+                    onClick={() => setActiveOptFilter(1)}
+                    className={
+                      1 === activeOptFilter ? "badgeActive badge" : "badge"
+                    }
                     style={{
-                      background: "#fad6a5 !important",
-                      borderRadius: 20,
+                      background:
+                        1 === activeOptFilter
+                          ? "#fad6a5 !important"
+                          : "white !important",
+                      borderRadius: "20px",
                       padding: 10,
-                      fontSize: 14,
                     }}
                   >
                     <span>Latest Achivement</span>
@@ -43,12 +64,17 @@ const ElectricalService = () => {
                 </Col>
                 <Col>
                   <div
-                    className="badge"
+                    onClick={() => setActiveOptFilter(2)}
+                    className={
+                      2 === activeOptFilter ? "badgeActive badge" : "badge"
+                    }
                     style={{
-                      background: "white !important",
-                      borderRadius: 20,
+                      background:
+                        2 === activeOptFilter
+                          ? "#fad6a5 !important"
+                          : "white !important",
+                      borderRadius: "20px",
                       padding: 10,
-                      fontSize: 14,
                     }}
                   >
                     <span>Badges</span>

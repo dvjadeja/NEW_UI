@@ -19,13 +19,13 @@ const StyledAlignedImage = styled.img`
   align-self: center;
 `;
 
-const Topbar = ({ back, title }) => {
+const Topbar = ({ back, title, link }) => {
   return (
     <>
       {back ? (
         <Row>
           <Col style={{ textAlign: "left" }}>
-            <Link to="/">
+            <Link to={`/${link}`}>
               <StyledAlignedImage src={back} />
             </Link>
           </Col>

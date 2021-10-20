@@ -1,6 +1,5 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 import back from "../assests/images/back.svg";
 import { useState } from "react";
@@ -148,7 +147,6 @@ const Games = () => {
   return (
     <>
       <div>
-        <Sidebar />
         <div
           className="main-container"
           style={{
@@ -159,7 +157,7 @@ const Games = () => {
             boxShadow: "0px 6px 14px 5px rgba(201,201,201,1)",
           }}
         >
-          <Topbar back={back} title="" />
+          <Topbar back={back} title="" link="" />
           <Row className="mt-3 mb-3">
             <Col style={{ padding: 15, paddingBottom: 0 }}>
               <div style={{ width: "50%" }}>

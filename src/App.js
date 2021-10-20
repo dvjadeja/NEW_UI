@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
+import Sidebar from "./components/Sidebar";
 import ElectricalService from "./pages/ElectricalService";
 import Games from "./pages/Games";
 import Home from "./pages/Home";
@@ -10,12 +11,10 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Sidebar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route
-            path="/latestAchivement/electrical"
-            component={ElectricalService}
-          />
+          <Route path="/electricalServices" component={ElectricalService} />
           <Route exact path="/home-6" component={Home6} />
           <Route path="/games" component={Games} />
           <Route path="/rewards" component={Rewards} />

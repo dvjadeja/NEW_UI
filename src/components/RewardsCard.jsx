@@ -1,10 +1,12 @@
 import React from "react";
 import { Card, Col, Image, Row } from "react-bootstrap";
+import { useHistory } from "react-router";
 
 const RewardsCard = (props) => {
+  const history = useHistory();
   return (
     <>
-      <Col xs={12} className="mt-3 pe-0 ps-0" key={props.data.index}>
+      <Col xs={12} className="mt-3 pe-0 ps-0" key={props.index}>
         <Card
           style={{
             background: `${props.data.bg}`,
@@ -12,6 +14,7 @@ const RewardsCard = (props) => {
             padding: 5,
             cursor: "pointer",
           }}
+          onClick={() => history.push(`/${props.data.to}`)}
         >
           <Row>
             <Col className="p-0" xs={4}>
