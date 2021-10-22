@@ -20,7 +20,7 @@ import {
 import styled from "styled-components";
 import { useState } from "react";
 
-const value = { earnPoints: 1000, comments: "" };
+// const value = { earnPoints: 1000, comments: "" };
 
 const LatestAchiveMentData = [
   {

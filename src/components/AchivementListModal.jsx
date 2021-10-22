@@ -4,7 +4,7 @@ import Topbar from "./Topbar";
 import back from "../assests/images/back.svg";
 import speedometer from "../assests/images/speedometer.svg";
 
-const AchivementListModal = ({ show, setShow, fullscreen }) => {
+const AchivementListModal = ({ show, setShow }) => {
   return (
     <>
       <Modal

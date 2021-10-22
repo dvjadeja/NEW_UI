@@ -136,12 +136,20 @@ ul {
   height: 100vh;
 }
 
+.modal {
+  padding: 0;
+}
+
 .modal-dialog {
   margin: 0 !important;
 }
 
 .modal-content {
   height: 100vh !important;
+}
+
+.show {
+  padding: 0px;
 }
 
 @media (min-width: 576px) {
