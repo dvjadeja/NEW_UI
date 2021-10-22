@@ -19,14 +19,17 @@ const StyledAlignedImage = styled.img`
   align-self: center;
 `;
 
-const Topbar = ({ back, title, link }) => {
+const Topbar = ({ back, title, link, onBack }) => {
+  const backModal = () => {
+    onBack();
+  };
   return (
     <>
       {back ? (
-        <Row>
+        <Row style={{ width: "100%" }}>
           <Col style={{ textAlign: "left" }}>
             <Link to={`/${link}`}>
-              <StyledAlignedImage src={back} />
+              <StyledAlignedImage src={back} onClick={backModal} />
             </Link>
           </Col>
           <Col style={{ padding: 14 }}>

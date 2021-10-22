@@ -1,9 +1,16 @@
 import React from "react";
+import { useState } from "react";
 import { Card, Col, Image, Row } from "react-bootstrap";
+import AchivementListModal from "./AchivementListModal";
+
+// const values = [true, "sm-down", "md-down", "lg-down", "xl-down", "xxl-down"];
 
 const Badge = (props) => {
+  const [acListShow, setAcListShow] = useState(false);
+
   return (
     <>
+      <AchivementListModal show={acListShow} setShow={setAcListShow} />
       <Col xs={12} className="mt-3 pe-0 ps-0" key={props.index}>
         <Card
           style={{
@@ -11,6 +18,7 @@ const Badge = (props) => {
             borderRadius: "10px",
             padding: 5,
           }}
+          onClick={() => setAcListShow(true)}
         >
           <Row>
             <Col className="p-0">
