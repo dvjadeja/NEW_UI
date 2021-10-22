@@ -138,7 +138,10 @@ ul {
 
 .modal-dialog {
   margin: 0 !important;
-  width: 100% !important;
+}
+
+.modal-content {
+  height: 100vh !important;
 }
 
 @media (min-width: 576px) {
