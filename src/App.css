@@ -165,3 +165,18 @@ ul {
   vertical-align: top !important;
   border: none !important;
 }
+
+.mainPage {
+  margin-top: 20px;
+  background: white;
+  padding: 10px;
+  border-radius: 20px 20px 0px 0;
+}
+
+.bg-sec-grey {
+  background: #f8f8f8;
+}
+
+.text-grey {
+  color: grey;
+}

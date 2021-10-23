@@ -20,6 +20,7 @@ import {
 import styled from "styled-components";
 import { useState } from "react";
 import OpportunityModal from "../components/OpportunityModal";
+import Survey from "../components/Survey";
 
 // const value = { earnPoints: 1000, comments: "" };
 
@@ -121,10 +122,12 @@ const Home = () => {
   const [activeOptFilter, setActiveOptFilter] = useState(0);
   const [activeOptFilter2, setActiveOptFilter2] = useState(1);
   const [optortunityShow, setOportunityShow] = useState(false);
+  const [surveyShow, setSurveyShow] = useState(false);
 
   return (
     <>
       <OpportunityModal show={optortunityShow} setShow={setOportunityShow} />
+      <Survey show={surveyShow} setShow={setSurveyShow} />
       <div>
         <div className="main-container">
           <Row className="mt-3 mb-3">
@@ -320,6 +323,7 @@ const Home = () => {
                   <Image
                     src={require("../assests/images/opinion1.svg").default}
                     style={{ width: "99%" }}
+                    onClick={() => setSurveyShow(true)}
                   />
                 </Col>
                 <Col xs={12}>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Col, Modal, Row } from "react-bootstrap";
 import Topbar from "./Topbar";
 import back from "../assests/images/back.svg";
@@ -6,10 +6,15 @@ import {
   buildStyles,
   CircularProgressbarWithChildren,
 } from "react-circular-progressbar";
+import OpportunityDetailModal from "./OpportunityDetailModal";
+
+const arr = [1, 2, 3, 4];
 
 const OpportunityModal = ({ show, setShow }) => {
+  const [oppShow, setOppShow] = useState(false);
   return (
     <>
+      <OpportunityDetailModal showDetail={oppShow} setShowDetail={setOppShow} />
       <Modal
         show={show}
         onHide={() => setShow(false)}
@@ -65,94 +70,33 @@ const OpportunityModal = ({ show, setShow }) => {
             </Col>
           </Row>
           <Row>
-            <Col>
-              <Card
-                className="scroll-card"
-                style={{
-                  width: "43vw",
-                  background:
-                    "linear-gradient(150deg, rgb(71, 141, 11), rgb(36, 71, 6) 100%)",
-                  color: "white",
-                  margin: 5,
-                  borderRadius: 10,
-                }}
-              >
-                <Card.Body>
-                  <Card.Title>
-                    Achivement Under Incentive Achivement November |
-                  </Card.Title>
-                  <span
-                    style={{ borderBottom: "1px solid", fontWeight: 900 }}
-                  ></span>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card
-                className="scroll-card"
-                style={{
-                  width: "43vw",
-                  background:
-                    "linear-gradient(150deg, rgb(71, 141, 11), rgb(36, 71, 6) 100%)",
-                  color: "white",
-                  margin: 5,
-                  borderRadius: 10,
-                }}
-              >
-                <Card.Body>
-                  <Card.Title>
-                    Achivement Under Incentive Achivement November |
-                  </Card.Title>
-                  <span
-                    style={{ borderBottom: "1px solid", fontWeight: 900 }}
-                  ></span>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card
-                className="scroll-card"
-                style={{
-                  width: "43vw",
-                  background:
-                    "linear-gradient(150deg, rgb(71, 141, 11), rgb(36, 71, 6) 100%)",
-                  color: "white",
-                  margin: 5,
-                  borderRadius: 10,
-                }}
-              >
-                <Card.Body>
-                  <Card.Title>
-                    Achivement Under Incentive Achivement November |
-                  </Card.Title>
-                  <span
-                    style={{ borderBottom: "1px solid", fontWeight: 900 }}
-                  ></span>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card
-                className="scroll-card"
-                style={{
-                  width: "43vw",
-                  background:
-                    "linear-gradient(150deg, rgb(71, 141, 11), rgb(36, 71, 6) 100%)",
-                  color: "white",
-                  margin: 5,
-                  borderRadius: 10,
-                }}
-              >
-                <Card.Body>
-                  <Card.Title>
-                    Achivement Under Incentive Achivement November |
-                  </Card.Title>
-                  <span
-                    style={{ borderBottom: "1px solid", fontWeight: 900 }}
-                  ></span>
-                </Card.Body>
-              </Card>
-            </Col>
+            {arr.map((index) => (
+              <Col key={index}>
+                <Card
+                  className="scroll-card"
+                  style={{
+                    width: "43vw",
+                    background:
+                      "linear-gradient(150deg, rgb(71, 141, 11), rgb(36, 71, 6) 100%)",
+                    color: "white",
+                    margin: 5,
+                    borderRadius: 10,
+                  }}
+                >
+                  <Card.Body>
+                    <Card.Title>
+                      Achivement Under Incentive Achivement November |
+                    </Card.Title>
+                    <span
+                      style={{ borderBottom: "1px solid", fontWeight: 900 }}
+                      onClick={() => setOppShow(true)}
+                    >
+                      View Details
+                    </span>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
           </Row>
         </Modal.Body>
       </Modal>
