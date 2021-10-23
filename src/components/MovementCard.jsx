@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Col, Image } from "react-bootstrap";
+import MovementModal from "./MovementModal";
 
 const MovementCard = (props) => {
+  const [showMovement, setShowMovement] = useState(false);
   return (
     <>
+      <MovementModal show={showMovement} setShow={setShowMovement} />
       <Col xs={12} lg={6} className="pe-0 ps-0" key={props.index}>
         <Card
           style={{
@@ -13,6 +16,7 @@ const MovementCard = (props) => {
             marginRight: "0px",
             borderRadius: "10px",
           }}
+          onClick={() => setShowMovement(true)}
         >
           <Image
             className="img-fluid for-light"
