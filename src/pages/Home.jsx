@@ -19,6 +19,7 @@ import {
 } from "react-circular-progressbar";
 import styled from "styled-components";
 import { useState } from "react";
+import OpportunityModal from "../components/OpportunityModal";
 
 // const value = { earnPoints: 1000, comments: "" };
 
@@ -119,9 +120,11 @@ const optFilter = [
 const Home = () => {
   const [activeOptFilter, setActiveOptFilter] = useState(0);
   const [activeOptFilter2, setActiveOptFilter2] = useState(1);
+  const [optortunityShow, setOportunityShow] = useState(false);
 
   return (
     <>
+      <OpportunityModal show={optortunityShow} setShow={setOportunityShow} />
       <div>
         <div className="main-container">
           <Row className="mt-3 mb-3">
@@ -270,7 +273,9 @@ const Home = () => {
               <Row style={{ marginTop: 10 }}>
                 {goalCard.map((data, index) => (
                   <Col key={index} xxl={3} xl={3} lg={6} md={6} sm={6} xs={12}>
-                    <StyledBorderLessCard>
+                    <StyledBorderLessCard
+                      onClick={() => setOportunityShow(true)}
+                    >
                       <Card.Text
                         style={{
                           fontSize: 12,
