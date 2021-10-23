@@ -21,6 +21,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import OpportunityModal from "../components/OpportunityModal";
 import Survey from "../components/Survey";
+import WhatsNewModal from "../components/WhatsNewModal";
 
 // const value = { earnPoints: 1000, comments: "" };
 
@@ -123,9 +124,11 @@ const Home = () => {
   const [activeOptFilter2, setActiveOptFilter2] = useState(1);
   const [optortunityShow, setOportunityShow] = useState(false);
   const [surveyShow, setSurveyShow] = useState(false);
+  const [showNew, setShowNew] = useState(false);
 
   return (
     <>
+      <WhatsNewModal show={showNew} setShow={setShowNew} />
       <OpportunityModal show={optortunityShow} setShow={setOportunityShow} />
       <Survey show={surveyShow} setShow={setSurveyShow} />
       <div>
@@ -353,6 +356,7 @@ const Home = () => {
                       backgroundSize: "cover",
                       width: "100%",
                     }}
+                    onClick={() => setShowNew(true)}
                   />
                 </Col>
                 <Col md={4} lg={4} sm={12}>

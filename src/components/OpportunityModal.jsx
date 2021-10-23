@@ -25,7 +25,7 @@ const OpportunityModal = ({ show, setShow }) => {
         <Modal.Header>
           <Topbar
             back={back}
-            title="Incentive Achivement Novemeber"
+            title="Incentive Achivement November"
             link=""
             onBack={() => setShow(false)}
           />
@@ -39,12 +39,12 @@ const OpportunityModal = ({ show, setShow }) => {
             flexDirection: "column",
           }}
         >
-          <Row>
+          <Row style={{ height: "26vw" }}>
             <Col>
               <Card
                 className="scroll-card"
                 style={{
-                  width: "43vw",
+                  width: "20vw",
                   background: "white",
                   color: "white",
                   margin: 5,
