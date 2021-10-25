@@ -12,7 +12,7 @@ const WhatsNewModal = ({ show, setShow }) => {
         onHide={() => setShow(false)}
         fullscreen={true}
         // dialogClassName="custom-modal"
-        style={{ padding: 0 }}
+        style={{ paddingLeft: "0 !important", paddingRight: "0 !important" }}
       >
         <Modal.Header>
           <Topbar

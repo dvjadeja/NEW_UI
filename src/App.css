@@ -137,7 +137,11 @@ ul {
 }
 
 .modal {
-  padding: 0;
+  padding: 0 !important;
+}
+
+.modal-body {
+  padding: 0 !important;
 }
 
 .modal-dialog {
@@ -145,7 +149,14 @@ ul {
 }
 
 .modal-content {
-  height: 100vh !important;
+  /* height: 100vh !important; */
+}
+
+.modal-close {
+  position: absolute;
+  top: -8px;
+  z-index: 99999;
+  right: -8px;
 }
 
 .show {

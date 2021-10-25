@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Col, Row, Badge } from "react-bootstrap";
 import clock from "../assests/images/clock.svg";
 import badge from "../assests/images/badgeIcon.svg";
 import speedmeter from "../assests/images/speedmeter.svg";
+import Journey from "./Journey";
 
 const ActiveBadge = ({
   color,
@@ -16,8 +17,10 @@ const ActiveBadge = ({
   scoreTotal,
   mission,
 }) => {
+  const [journeyShow, setJourneyShow] = useState(false);
   return (
     <>
+      <Journey show={journeyShow} setShow={setJourneyShow} />
       <Card
         style={{
           height: "200px",
@@ -153,6 +156,7 @@ const ActiveBadge = ({
                   borderRadius: "20px",
                 }}
                 pill
+                onClick={() => setJourneyShow(true)}
               >
                 Next Milestone : Mission {mission}
               </Badge>
