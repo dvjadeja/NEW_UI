@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AchievmentsModal from "./AchievmentsModal";
+import NotificationModal from "./NotificationModal";
 
 const Nav = styled.nav`
   width: 100%;
@@ -20,14 +22,20 @@ const StyledAlignedImage = styled.img`
   align-self: center;
 `;
 
-const Topbar = ({ back, title, link, onBack }) => {
+const Topbar = ({ back, title, link, onBack, extra }) => {
+  const history = useHistory();
   const [show, setShow] = useState(false);
+  const [notificationShow, setNotificationShow] = useState(false);
   const backModal = () => {
     onBack();
   };
   return (
     <>
       <AchievmentsModal show={show} setShow={setShow} />
+      <NotificationModal
+        show={notificationShow}
+        setShow={setNotificationShow}
+      />
       {back ? (
         <Row style={{ width: "100%" }}>
           <Col style={{ textAlign: "left" }}>
@@ -49,19 +57,27 @@ const Topbar = ({ back, title, link, onBack }) => {
                 margin: "10px 4% 10px 40%",
               }}
             >
-              <StyledAlignedImage
-                src={require("../assests/images/achievement.png").default}
-                onClick={() => setShow(true)}
-                style={{ cursor: "pointer" }}
-              />
-              <StyledAlignedImage
-                src={require("../assests/images/Notification.png").default}
-                style={{ cursor: "pointer" }}
-              />
-              <StyledAlignedImage
-                src={require("../assests/images/profile@2x.png").default}
-                style={{ cursor: "pointer" }}
-              />
+              {extra ? (
+                extra()
+              ) : (
+                <>
+                  <StyledAlignedImage
+                    src={require("../assests/images/achievement.png").default}
+                    onClick={() => setShow(true)}
+                    style={{ cursor: "pointer" }}
+                  />
+                  <StyledAlignedImage
+                    src={require("../assests/images/Notification.png").default}
+                    onClick={() => setNotificationShow(true)}
+                    style={{ cursor: "pointer" }}
+                  />
+                  <StyledAlignedImage
+                    src={require("../assests/images/profile@2x.png").default}
+                    style={{ cursor: "pointer" }}
+                    onClick={() => history.push("/profile")}
+                  />
+                </>
+              )}
             </div>
           </Col>
         </Row>
@@ -78,12 +94,18 @@ const Topbar = ({ back, title, link, onBack }) => {
             {back && <StyledAlignedImage src={back} />}
             <StyledAlignedImage
               src={require("../assests/images/achievement.png").default}
+              onClick={() => setShow(true)}
+              style={{ cursor: "pointer" }}
             />
             <StyledAlignedImage
               src={require("../assests/images/Notification.png").default}
+              onClick={() => setNotificationShow(true)}
+              style={{ cursor: "pointer" }}
             />
             <StyledAlignedImage
               src={require("../assests/images/profile@2x.png").default}
+              style={{ cursor: "pointer" }}
+              onClick={() => history.push("/profile")}
             />
           </div>
         </Nav>
