@@ -22,6 +22,7 @@ import { useState } from "react";
 import OpportunityModal from "../components/OpportunityModal";
 import Survey from "../components/Survey";
 import WhatsNewModal from "../components/WhatsNewModal";
+import ScoreModal from "../components/ScoreModal";
 
 // const value = { earnPoints: 1000, comments: "" };
 
@@ -120,6 +121,7 @@ const optFilter = [
 ];
 
 const Home = () => {
+  const [show, setShow] = useState(false);
   const [activeOptFilter, setActiveOptFilter] = useState(0);
   const [activeOptFilter2, setActiveOptFilter2] = useState(1);
   const [optortunityShow, setOportunityShow] = useState(false);
@@ -128,6 +130,7 @@ const Home = () => {
 
   return (
     <>
+      <ScoreModal show={show} setShow={setShow} />
       <WhatsNewModal show={showNew} setShow={setShowNew} />
       <OpportunityModal show={optortunityShow} setShow={setOportunityShow} />
       <Survey show={surveyShow} setShow={setSurveyShow} />
@@ -147,7 +150,7 @@ const Home = () => {
               }}
             >
               <Row style={{ padding: "10px 20px 20px 20px" }}>
-                <Col>
+                <Col onClick={() => setShow(true)}>
                   <p
                     className="primary"
                     style={{ fontSize: "22px", marginBottom: 0 }}
