@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import AchievmentsModal from "./AchievmentsModal";
 
 const Nav = styled.nav`
   width: 100%;
@@ -20,11 +21,13 @@ const StyledAlignedImage = styled.img`
 `;
 
 const Topbar = ({ back, title, link, onBack }) => {
+  const [show, setShow] = useState(false);
   const backModal = () => {
     onBack();
   };
   return (
     <>
+      <AchievmentsModal show={show} setShow={setShow} />
       {back ? (
         <Row style={{ width: "100%" }}>
           <Col style={{ textAlign: "left" }}>
@@ -48,12 +51,16 @@ const Topbar = ({ back, title, link, onBack }) => {
             >
               <StyledAlignedImage
                 src={require("../assests/images/achievement.png").default}
+                onClick={() => setShow(true)}
+                style={{ cursor: "pointer" }}
               />
               <StyledAlignedImage
                 src={require("../assests/images/Notification.png").default}
+                style={{ cursor: "pointer" }}
               />
               <StyledAlignedImage
                 src={require("../assests/images/profile@2x.png").default}
+                style={{ cursor: "pointer" }}
               />
             </div>
           </Col>

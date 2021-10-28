@@ -240,3 +240,10 @@ ul {
 .mb0 {
   margin-bottom: 0 !important;
 }
+
+.home-card {
+  background: white;
+  border-radius: 25px 25px 0px 0px;
+  position: relative;
+  top: -15px;
+}
