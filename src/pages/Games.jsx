@@ -144,6 +144,7 @@ const historyData = [
 
 const Games = () => {
   const [activeOptFilter, setActiveOptFilter] = useState(1);
+  const [onBack, setOnBack] = useState("/");
   return (
     <>
       <div>
@@ -157,7 +158,7 @@ const Games = () => {
             boxShadow: "0px 6px 14px 5px rgba(201,201,201,1)",
           }}
         >
-          <Topbar back={back} title="" link="" />
+          <Topbar back={back} title="" link="" onBack={() => setOnBack("/")} />
           <Row className="mt-3 mb-3">
             <Col style={{ padding: 15, paddingBottom: 0 }}>
               <div style={{ width: "50%" }}>
