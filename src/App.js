@@ -1,6 +1,7 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
+import EditProfile from "./pages/EditProfile";
 import ElectricalService from "./pages/ElectricalService";
 import Games from "./pages/Games";
 import Home from "./pages/Home";
@@ -17,6 +18,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/edit-profile" component={EditProfile} />
           <Route path="/electricalServices" component={ElectricalService} />
           <Route exact path="/home-6" component={Home6} />
           <Route path="/games" component={Games} />

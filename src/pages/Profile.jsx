@@ -11,7 +11,7 @@ const Profile = () => {
   const Extra = () => (
     <p
       onClick={() => history.push({ pathname: "/edit-profile" })}
-      style={{ marginTop: 7, marginBottom: 0 }}
+      style={{ marginTop: 7, marginBottom: 0, cursor: "pointer" }}
     >
       Edit
     </p>
