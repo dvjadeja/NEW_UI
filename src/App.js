@@ -9,6 +9,7 @@ import Home6 from "./pages/Home6";
 import Profile from "./pages/Profile";
 import Rank from "./pages/Rank";
 import Rewards from "./pages/Rewards";
+import SpinAndWin from "./pages/SpinAndWin";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/games" component={Games} />
           <Route path="/ranks" component={Rank} />
           <Route path="/rewards" component={Rewards} />
+          <Route path="/spin-and-win" component={SpinAndWin} />
         </Switch>
       </BrowserRouter>
     </div>
