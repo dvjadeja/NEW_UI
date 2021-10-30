@@ -1,6 +1,8 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
+import CertificateModal from "./components/CertificateModal";
 import Sidebar from "./components/Sidebar";
+import Analytics from "./pages/Analytics";
 import EditProfile from "./pages/EditProfile";
 import ElectricalService from "./pages/ElectricalService";
 import Games from "./pages/Games";
@@ -24,8 +26,10 @@ function App() {
           <Route exact path="/home-6" component={Home6} />
           <Route path="/games" component={Games} />
           <Route path="/ranks" component={Rank} />
-          <Route path="/rewards" component={Rewards} />
+          <Route exact path="/rewards" component={Rewards} />
           <Route path="/spin-and-win" component={SpinAndWin} />
+          <Route path="/analytics" component={Analytics} />
+          <Route path="/certificate-modal" component={CertificateModal} />
         </Switch>
       </BrowserRouter>
     </div>

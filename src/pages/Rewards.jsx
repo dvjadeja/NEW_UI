@@ -8,6 +8,7 @@ import highVoltage from "../assests/images/highVoltage.svg";
 import electricalServicesPink from "../assests/images/electricalServicesPink.svg";
 import rewardCertificate from "../assests/images/rewardCertificate.svg";
 import RewardsCard from "../components/RewardsCard";
+import { useHistory } from "react-router";
 
 const optFilter = [
   { title: "Badges", key: 1 },
@@ -44,22 +45,26 @@ const certCard = [
     img: rewardCertificate,
     bg: "white",
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic tenetur, error sunt eum quidem voluptate laborum officia",
+    to: "certificate-modal",
   },
   {
     name: "Ace of Initiative",
     img: rewardCertificate,
     bg: "white",
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic tenetur, error sunt eum quidem voluptate laborum officia",
+    to: "certificate-modal",
   },
   {
     name: "Top Performer",
     img: rewardCertificate,
     bg: "white",
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic tenetur, error sunt eum quidem voluptate laborum officia",
+    to: "certificate-modal",
   },
 ];
 
 const Rewards = () => {
+  const history = useHistory();
   const [activeOptFilter, setActiveOptFilter] = useState(1);
   return (
     <>
@@ -84,7 +89,12 @@ const Rewards = () => {
             paddingBottom: 20,
           }}
         >
-          <Topbar back={back} title="Rewards" link="" />
+          <Topbar
+            back={back}
+            title="Rewards"
+            link=""
+            onBack={() => history.push("/")}
+          />
           <Row style={{ padding: "40px 20px 20px 20px" }}>
             <Col style={{ textAlign: "left" }}>
               <p
@@ -153,7 +163,13 @@ const Rewards = () => {
                     <RewardsCard data={data} index={index} textColor="white" />
                   ))
                 : certCard.map((data, index) => (
-                    <RewardsCard data={data} index={index} textColor="black" />
+                    <div>
+                      <RewardsCard
+                        data={data}
+                        index={index}
+                        textColor="black"
+                      />
+                    </div>
                   ))}
             </Row>
           </div>
