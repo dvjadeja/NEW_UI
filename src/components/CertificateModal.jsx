@@ -6,7 +6,6 @@ import { useHistory } from "react-router";
 
 const CertificateModal = () => {
   const history = useHistory();
-  const [show, setShow] = useState(false);
   return (
     <>
       <div
@@ -34,7 +33,6 @@ const CertificateModal = () => {
             title="Bring it Beyond"
             link=""
             onBack={() => {
-              setShow(false);
               history.push("/rewards");
             }}
           />

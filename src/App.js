@@ -11,6 +11,7 @@ import Home6 from "./pages/Home6";
 import Profile from "./pages/Profile";
 import Rank from "./pages/Rank";
 import Rewards from "./pages/Rewards";
+import Settings from "./pages/Settings";
 import SpinAndWin from "./pages/SpinAndWin";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/spin-and-win" component={SpinAndWin} />
           <Route path="/analytics" component={Analytics} />
           <Route path="/certificate-modal" component={CertificateModal} />
+          <Route path="/settings" component={Settings} />
         </Switch>
       </BrowserRouter>
     </div>
