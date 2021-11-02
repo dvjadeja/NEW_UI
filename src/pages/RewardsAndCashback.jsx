@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import Topbar from "../components/Topbar";
 import back from "../assests/images/back.svg";
 import { Col, Image, Row } from "react-bootstrap";
+import CashbackModal from "../components/CashbackModal";
 
 const RewardsAndCashback = () => {
   const [onBack, setOnBack] = useState("/");
+  const [showCashBack, setShowCashBack] = useState(false);
   return (
     <>
+      <CashbackModal show={showCashBack} setShow={setShowCashBack} />
       <div>
         <div
           className="main-container"
@@ -18,9 +21,15 @@ const RewardsAndCashback = () => {
             boxShadow: "0px 6px 14px 5px rgba(201,201,201,1)",
           }}
         >
-          <Topbar back={back} title="" link="" onBack={() => setOnBack("/")} />
+          <Topbar
+            back={back}
+            title="Cashback & Rewards"
+            link=""
+            onBack={() => setOnBack("/rewards-cashback")}
+          />
           <Row className="m-2">
             <Col
+              onClick={() => setShowCashBack(true)}
               style={{
                 padding: 20,
                 background: "#FFFDD1",
