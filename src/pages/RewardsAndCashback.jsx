@@ -3,13 +3,16 @@ import Topbar from "../components/Topbar";
 import back from "../assests/images/back.svg";
 import { Col, Image, Row } from "react-bootstrap";
 import CashbackModal from "../components/CashbackModal";
+import UnotagPointsModal from "../components/UnotagPointsModal";
 
 const RewardsAndCashback = () => {
   const [onBack, setOnBack] = useState("/");
+  const [showUnotag, setShowUnotag] = useState(false);
   const [showCashBack, setShowCashBack] = useState(false);
   return (
     <>
       <CashbackModal show={showCashBack} setShow={setShowCashBack} />
+      <UnotagPointsModal show={showUnotag} setShow={setShowUnotag} />
       <div>
         <div
           className="main-container"
@@ -52,6 +55,7 @@ const RewardsAndCashback = () => {
               <p className="mt-3">Total Cashback</p>
             </Col>
             <Col
+              onClick={() => setShowUnotag(true)}
               style={{
                 padding: 20,
                 background: "#FFF2E1",
