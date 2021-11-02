@@ -14,6 +14,7 @@ import Rewards from "./pages/Rewards";
 import RewardsAndCashback from "./pages/RewardsAndCashback";
 import Settings from "./pages/Settings";
 import SpinAndWin from "./pages/SpinAndWin";
+import Stickers from "./pages/Stickers";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/certificate-modal" component={CertificateModal} />
           <Route path="/settings" component={Settings} />
           <Route path="/rewards-cashback" component={RewardsAndCashback} />
+          <Route path="/stickers" component={Stickers} />
         </Switch>
       </BrowserRouter>
     </div>

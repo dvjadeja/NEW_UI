@@ -4,8 +4,10 @@ import back from "../assests/images/back.svg";
 import { Col, Image, Row } from "react-bootstrap";
 import CashbackModal from "../components/CashbackModal";
 import UnotagPointsModal from "../components/UnotagPointsModal";
+import { useHistory } from "react-router";
 
 const RewardsAndCashback = () => {
+  const history = useHistory();
   const [onBack, setOnBack] = useState("/");
   const [showUnotag, setShowUnotag] = useState(false);
   const [showCashBack, setShowCashBack] = useState(false);
@@ -95,6 +97,9 @@ const RewardsAndCashback = () => {
               <p className="mt-4">Your Stickers</p>
             </Col>
             <Col
+              onClick={() => {
+                history.push("/stickers");
+              }}
               style={{
                 margin: "auto",
                 display: "flex",
