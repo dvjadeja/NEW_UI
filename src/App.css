@@ -253,3 +253,19 @@ ul {
 .horizontal-scroll::-webkit-scrollbar {
   display: none;
 }
+
+.card-info {
+  font-size: 3vw;
+}
+
+.ofy-count {
+  width: 32px;
+  height: 18px;
+  color: black;
+  background: white;
+  border-radius: 15px;
+  margin-top: 15px;
+  position: absolute;
+  right: 5px;
+  font-size: 12px;
+}

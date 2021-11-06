@@ -5,16 +5,19 @@ import { Col, Image, Row } from "react-bootstrap";
 import CashbackModal from "../components/CashbackModal";
 import UnotagPointsModal from "../components/UnotagPointsModal";
 import { useHistory } from "react-router";
+import WinUpToRewards from "../components/WinUpToRewards";
 
 const RewardsAndCashback = () => {
   const history = useHistory();
   const [onBack, setOnBack] = useState("/");
   const [showUnotag, setShowUnotag] = useState(false);
   const [showCashBack, setShowCashBack] = useState(false);
+  const [showUpTo, setShowUpTo] = useState(false);
   return (
     <>
       <CashbackModal show={showCashBack} setShow={setShowCashBack} />
       <UnotagPointsModal show={showUnotag} setShow={setShowUnotag} />
+      <WinUpToRewards show={showUpTo} setShow={setShowUpTo} />
       <div>
         <div
           className="main-container"
@@ -164,6 +167,7 @@ const RewardsAndCashback = () => {
                   src={require("../assests/images/cash/up1.png").default}
                   alt="up1"
                   style={{ width: "100%", cursor: "pointer" }}
+                  onClick={() => setShowUpTo(true)}
                 />
               </div>
               <div style={{ width: "40%", marginRight: 5, cursor: "pointer" }}>
