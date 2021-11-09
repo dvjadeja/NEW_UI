@@ -28,6 +28,7 @@ const Analytics = () => {
         fullscreen={true}
         // dialogClassName="custom-modal"
         style={{ paddingLeft: "0 !important", paddingRight: "0 !important" }}
+        backdrop={false}
       >
         <Modal.Header
           style={{

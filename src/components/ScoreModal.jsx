@@ -14,6 +14,7 @@ const ScoreModal = ({ show, setShow }) => {
         show={show}
         onHide={() => setShow(false)}
         fullscreen={true}
+        backdrop={false}
         // dialogClassName="custom-modal"
         style={{ paddingLeft: "0 !important", paddingRight: "0 !important" }}
       >
@@ -30,6 +31,7 @@ const ScoreModal = ({ show, setShow }) => {
             title="Your Score"
             link=""
             onBack={() => setShow(false)}
+            backgroundColor="#F7E7CE"
           />
         </Modal.Header>
         <Modal.Body style={{ display: "flex", justifyContent: "center" }}>

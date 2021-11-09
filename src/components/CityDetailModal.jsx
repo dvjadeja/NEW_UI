@@ -54,15 +54,17 @@ const CityDetailModal = ({ show, setShow }) => {
         show={show}
         onHide={() => setShow(false)}
         fullscreen={true}
+        backdrop={false}
         // dialogClassName="custom-modal"
         style={{ paddingLeft: "0 !important", paddingRight: "0 !important" }}
       >
         <Modal.Header>
           <Topbar
             back={back}
-            title="Movement"
-            link=""
+            title="Rank"
+            link="ranks"
             onBack={() => setShow(false)}
+            backgroundColor="#F7E7CE"
           />
         </Modal.Header>
         <Modal.Body className="text-center p-0" style={{ marginBottom: 0 }}>

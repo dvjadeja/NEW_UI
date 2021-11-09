@@ -44,7 +44,7 @@ const Journey = ({ show, setShow }) => {
                 <Topbar
                   back={back}
                   title="Incentive Achivements"
-                  link=""
+                  link="games"
                   onBack={() => setShow(false)}
                 />
               </Col>

@@ -153,6 +153,8 @@ const Rank = () => {
                   margin: 10,
                   background: "#f7e7ce",
                   borderRadius: 5,
+                  height: 70,
+                  alignItems: "center",
                 }}
                 onClick={() => setShow(true)}
               >
@@ -160,16 +162,22 @@ const Rank = () => {
                   xs={2}
                   style={{
                     background: "#FAD6A5",
-                    padding: 10,
+                    padding: 22,
                     borderRadius: "5px 0 0 5px",
                   }}
                 >
                   {key + 1}
                 </Col>
-                <Col xs={5} style={{ padding: 10, textAlign: "left" }}>
+                <Col
+                  xs={5}
+                  style={{ padding: 10, textAlign: "left", fontSize: 30 }}
+                >
                   {data.name}
                 </Col>
-                <Col xs={5} style={{ paddingTop: 10 }}>
+                <Col
+                  xs={5}
+                  style={{ paddingTop: 10, fontSize: 27, fontWeight: 100 }}
+                >
                   <span className="rank-point">
                     <img
                       className="rank-img"

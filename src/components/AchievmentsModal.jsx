@@ -24,6 +24,7 @@ const AchievmentsModal = ({ show, setShow }) => {
         show={show}
         onHide={() => setShow(false)}
         fullscreen={true}
+        backdrop={false}
         // dialogClassName="custom-modal"
         style={{ paddingLeft: "0 !important", paddingRight: "0 !important" }}
       >

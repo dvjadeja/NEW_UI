@@ -25,6 +25,7 @@ const OpportunityDetailModal = ({ showDetail, setShowDetail }) => {
         show={showDetail}
         onHide={() => setShowDetail(false)}
         fullscreen={true}
+        backdrop={false}
         // dialogClassName="custom-modal"
         style={{ padding: 0 }}
       >

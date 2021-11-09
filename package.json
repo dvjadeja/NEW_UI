@@ -24,6 +24,7 @@
     "react-score-indicator": "^2.2.1",
     "react-scripts": "4.0.3",
     "react-switch": "^6.0.0",
+    "react-wheel-of-prizes": "^1.0.9",
     "reactstrap": "^8.10.0",
     "styled-components": "^5.3.1",
     "web-vitals": "^1.0.1"

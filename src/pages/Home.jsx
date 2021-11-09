@@ -143,14 +143,14 @@ const Home = () => {
               sm={5}
               l
               style={{
-                border: "1px solid #707070",
                 boxShadow: "box-shadow: 5px 6px 10px -3px rgba(112,112,112,1)",
                 borderRadius: "10px",
+                backgroundColor: "#F7E7CE",
                 marginLeft: "10px",
               }}
             >
               <Row style={{ padding: "10px 20px 20px 20px" }}>
-                <Col onClick={() => setShow(true)}>
+                <Col xs={6} onClick={() => setShow(true)}>
                   <p
                     className="primary"
                     style={{ fontSize: "22px", marginBottom: 0 }}
@@ -160,7 +160,7 @@ const Home = () => {
                   <p className="home-point">2000</p>
                 </Col>
 
-                <Col style={{ textAlign: "right" }}>
+                <Col xs={6} style={{ textAlign: "right" }}>
                   <div className="rank-bg">
                     <p
                       style={{

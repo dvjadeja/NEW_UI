@@ -15,6 +15,7 @@ const Survey = ({ show, setShow }) => {
         show={show}
         onHide={() => setShow(false)}
         fullscreen={true}
+        backdrop={false}
         // dialogClassName="custom-modal"
         style={{ padding: 0 }}
       >
@@ -24,6 +25,7 @@ const Survey = ({ show, setShow }) => {
             title="Survey"
             link=""
             onBack={() => setShow(false)}
+            backgroundColor="#F7E7CE"
           />
         </Modal.Header>
         <Modal.Body>

@@ -55,6 +55,7 @@ const NotificationModal = ({ show, setShow }) => {
         show={show}
         onHide={() => setShow(false)}
         fullscreen={true}
+        backdrop={false}
         // dialogClassName="custom-modal"
         style={{ paddingLeft: "0 !important", paddingRight: "0 !important" }}
       >
@@ -88,7 +89,7 @@ const NotificationModal = ({ show, setShow }) => {
                   <span
                     style={{
                       padding: 10,
-                      background: "#fffef2",
+                      background: "#F7E7CE",
                       borderRadius: 20,
                       marginTop: 20,
                     }}
@@ -117,10 +118,10 @@ const NotificationModal = ({ show, setShow }) => {
                 <Col xs={2}>
                   <p
                     style={{
-                      background: "#F6F5F3",
+                      background: "#F7E7CE",
                       padding: "9px 15px",
                       borderRadius: "25px 0 0 25px",
-                      marginTop: 15,
+                      marginTop: 10,
                     }}
                   >
                     {data.time}

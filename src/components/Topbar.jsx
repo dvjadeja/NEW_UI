@@ -22,7 +22,7 @@ const StyledAlignedImage = styled.img`
   align-self: center;
 `;
 
-const Topbar = ({ back, title, link, onBack, extra }) => {
+const Topbar = ({ back, title, link, onBack, extra, backgroundColor }) => {
   const history = useHistory();
   const [show, setShow] = useState(false);
   const [notificationShow, setNotificationShow] = useState(false);
@@ -37,7 +37,14 @@ const Topbar = ({ back, title, link, onBack, extra }) => {
         setShow={setNotificationShow}
       />
       {back ? (
-        <Row style={{ width: "100%" }}>
+        <Row
+          style={{
+            width: "100%",
+            marginRight: 5,
+            backgroundColor: `${backgroundColor}`,
+            borderRadius: "10px 10px 0px 0px",
+          }}
+        >
           <Col style={{ textAlign: "left" }}>
             <Link to={`/${link}`}>
               <StyledAlignedImage src={back} onClick={backModal} />

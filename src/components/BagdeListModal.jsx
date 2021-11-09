@@ -15,10 +15,11 @@ const BagdeListModal = ({ show, setShow }) => {
         show={show}
         onHide={() => setShow(false)}
         fullscreen={true}
+        backdrop={false}
         // dialogClassName="custom-modal"
         style={{ padding: 0 }}
       >
-        <Modal.Header>
+        <Modal.Header style={{ backgroundColor: "#F7E7CE" }}>
           <Topbar
             back={back}
             title="Electrical Services"
@@ -26,7 +27,7 @@ const BagdeListModal = ({ show, setShow }) => {
             onBack={() => setShow(false)}
           />
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body style={{ backgroundColor: "#F7E7CE" }}>
           <Row className="mt-3">
             <Col style={{ padding: 15 }}>
               <Row style={{ paddingLeft: "10px" }}>

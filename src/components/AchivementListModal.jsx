@@ -11,6 +11,7 @@ const AchivementListModal = ({ show, setShow }) => {
         show={show}
         onHide={() => setShow(false)}
         fullscreen={true}
+        backdrop={false}
         // dialogClassName="custom-modal"
         style={{ padding: 0 }}
       >
