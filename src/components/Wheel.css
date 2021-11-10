@@ -1,6 +1,6 @@
 :root {
   --wheel-font: "Lato", "Quicksand", sans-serif;
-  --wheel-size: 350px;
+  --wheel-size: 250px;
   --wheel-slice-spacing: 30px;
   --wheel-border-size: 10px;
   --wheel-color: #da3768;
@@ -133,12 +133,12 @@
   opacity: 0.25;
 
   /* 
-        Largeur du triangle
-        Je ne sais pas pourquoi j'ai besoin d'ajouter 
-          " + var(--wheel-size) / 2 " dans slice-max-width  ==> donne 2.PI.R + R
-        mais globalement ca marche a peu près bien 
-        TODO: A étudier 
-      */
+      Largeur du triangle
+      Je ne sais pas pourquoi j'ai besoin d'ajouter 
+        " + var(--wheel-size) / 2 " dans slice-max-width  ==> donne 2.PI.R + R
+      mais globalement ca marche a peu près bien 
+      TODO: A étudier 
+    */
   --slice-max-width: calc(
     var(--PI) * var(--wheel-size) + var(--wheel-size) / 2
   );

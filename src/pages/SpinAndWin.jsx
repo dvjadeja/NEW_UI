@@ -27,6 +27,7 @@ const SpinAndWin = () => {
       <Modal
         show={show}
         fullscreen={true}
+        backdrop={false}
         // dialogClassName="custom-modal"
         style={{ paddingLeft: "0 !important", paddingRight: "0 !important" }}
       >
@@ -59,7 +60,7 @@ const SpinAndWin = () => {
         >
           <Row>
             <Col>
-              <Wheel />
+              <Wheel items={items} />
             </Col>
             <Col>
               <p style={{ color: "#DC7832", fontSize: 15, marginBottom: 0 }}>
