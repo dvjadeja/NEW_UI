@@ -10,8 +10,10 @@ const OfyCard = (props) => {
         backgroundImage: `url(${props.image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        width: 154,
-        height: 154,
+        width: 145,
+        height: 145,
+        marginLeft: 0,
+        borderRadius: 10,
       }}
     >
       <span className="ofy-count">{props.text1}</span>

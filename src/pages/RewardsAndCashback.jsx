@@ -6,6 +6,7 @@ import CashbackModal from "../components/CashbackModal";
 import UnotagPointsModal from "../components/UnotagPointsModal";
 import { useHistory } from "react-router";
 import WinUpToRewards from "../components/WinUpToRewards";
+import ScratchCardModal from "../components/ScratchCard";
 
 const RewardsAndCashback = () => {
   const history = useHistory();
@@ -13,11 +14,12 @@ const RewardsAndCashback = () => {
   const [showUnotag, setShowUnotag] = useState(false);
   const [showCashBack, setShowCashBack] = useState(false);
   const [showUpTo, setShowUpTo] = useState(false);
+  const [active, setActive] = useState("rewards");
   return (
     <>
       <CashbackModal show={showCashBack} setShow={setShowCashBack} />
       <UnotagPointsModal show={showUnotag} setShow={setShowUnotag} />
-      <WinUpToRewards show={showUpTo} setShow={setShowUpTo} />
+
       <div>
         <div
           className="main-container"
@@ -41,7 +43,7 @@ const RewardsAndCashback = () => {
               <div
                 style={{
                   background: "white",
-                  height: "60vh",
+                  height: "70vh",
                   marginLeft: 10,
                   paddingTop: 10,
                   borderRadius: 10,
@@ -77,7 +79,7 @@ const RewardsAndCashback = () => {
                     >
                       1500
                     </span>
-                    <p className="mt-3">Total Cashback</p>
+                    <p className="mt-3">Total Cashback Won</p>
                   </Col>
                   <Col
                     onClick={() => setShowUnotag(true)}
@@ -160,91 +162,113 @@ const RewardsAndCashback = () => {
                 </Row>
               </div>
             </Col>
-            <Col>
-              <div className="m-2">
-                <p
-                  style={{
-                    color: "#484848",
-                    fontSize: 15,
-                    marginBottom: 0,
-                    textAlign: "left",
-                  }}
-                >
-                  Scratch Cards and Get Cashback
-                </p>
-                <div className="horizontal-scroll mt-3 d-flex justify-content-evenly">
-                  <Image
-                    src={require("../assests/images/cash/ca1.png").default}
-                    alt="ca1"
-                    style={{ cursor: "pointer" }}
-                  />
-                  <Image
-                    src={require("../assests/images/cash/ca2.png").default}
-                    alt="ca2"
-                    style={{ cursor: "pointer" }}
-                  />
-                  <Image
-                    src={require("../assests/images/cash/ca3.png").default}
-                    alt="ca3"
-                    style={{ cursor: "pointer" }}
-                  />
-                </div>
-                <div className="horizontal-scroll mt-3 d-flex flex-column justify-content-center align-items-center">
-                  <div style={{ width: "60%", marginRight: 5 }}>
-                    <Image
-                      src={require("../assests/images/cash/up1.png").default}
-                      alt="up1"
-                      style={{ width: "100%", cursor: "pointer" }}
-                      onClick={() => setShowUpTo(true)}
-                    />
-                  </div>
-                  <div
-                    style={{ width: "60%", marginRight: 5, cursor: "pointer" }}
+            {active === "rewards" && (
+              <Col xs={7}>
+                <div className="m-2">
+                  <p
+                    style={{
+                      color: "#484848",
+                      fontSize: 15,
+                      marginBottom: 0,
+                      textAlign: "left",
+                    }}
                   >
+                    Scratch Cards and Get Cashback
+                  </p>
+                  <div className="horizontal-scroll mt-3 d-flex justify-content-evenly">
                     <Image
-                      src={require("../assests/images/cash/up2.png").default}
-                      alt="up2"
-                      style={{ width: "100%", cursor: "pointer" }}
+                      src={require("../assests/images/cash/ca1.png").default}
+                      alt="ca1"
+                      style={{ cursor: "pointer", width: "33%", height: "33%" }}
+                      onClick={() => setActive("scratchCard")}
+                    />
+                    <Image
+                      src={require("../assests/images/cash/ca2.png").default}
+                      alt="ca2"
+                      style={{ cursor: "pointer", width: "33%", height: "33%" }}
+                    />
+                    <Image
+                      src={require("../assests/images/cash/ca3.png").default}
+                      alt="ca3"
+                      style={{ cursor: "pointer", width: "33%", height: "33%" }}
                     />
                   </div>
-                  <div style={{ width: "60%" }}>
+                  <div className="horizontal-scroll mt-3 d-flex flex-column justify-content-center align-items-center">
+                    <div style={{ width: "100%", marginRight: 5 }}>
+                      <Image
+                        src={
+                          require("../assests/images/cash/Group 33595.png")
+                            .default
+                        }
+                        alt="up1"
+                        style={{ width: "95%", cursor: "pointer" }}
+                        onClick={() => setActive("winUpTo")}
+                      />
+                    </div>
+                    <div
+                      style={{
+                        width: "100%",
+                        marginRight: 5,
+                        cursor: "pointer",
+                      }}
+                    >
+                      <Image
+                        src={require("../assests/images/cash/up2.png").default}
+                        alt="up2"
+                        style={{ width: "95%", cursor: "pointer" }}
+                      />
+                    </div>
+                    <div style={{ width: "100%" }}>
+                      <Image
+                        src={require("../assests/images/cash/up3.png").default}
+                        alt="up3"
+                        style={{ width: "95%", cursor: "pointer" }}
+                      />
+                    </div>
+                  </div>
+                  <p
+                    className="primary"
+                    style={{
+                      fontSize: "15px",
+                      marginBottom: 0,
+                      textAlign: "left",
+                      marginTop: 10,
+                    }}
+                  >
+                    Unlock these cards
+                  </p>
+                  <div className="horizontal-scroll mt-3 d-flex justify-content-evenly">
                     <Image
-                      src={require("../assests/images/cash/up3.png").default}
-                      alt="up3"
-                      style={{ width: "100%", cursor: "pointer" }}
+                      src={require("../assests/images/cash/un1.png").default}
+                      alt="un1"
+                      style={{ cursor: "pointer" }}
+                    />
+                    <Image
+                      src={require("../assests/images/cash/un2.png").default}
+                      alt="un2"
+                      style={{ cursor: "pointer" }}
+                    />
+                    <Image
+                      src={require("../assests/images/cash/un3.png").default}
+                      alt="un3"
+                      style={{ cursor: "pointer" }}
                     />
                   </div>
                 </div>
-                <p
-                  className="primary"
-                  style={{
-                    fontSize: "15px",
-                    marginBottom: 0,
-                    textAlign: "left",
-                    marginTop: 10,
-                  }}
-                >
-                  Unlock these cards
-                </p>
-                <div className="horizontal-scroll mt-3 d-flex justify-content-evenly">
-                  <Image
-                    src={require("../assests/images/cash/un1.png").default}
-                    alt="un1"
-                    style={{ cursor: "pointer" }}
-                  />
-                  <Image
-                    src={require("../assests/images/cash/un2.png").default}
-                    alt="un2"
-                    style={{ cursor: "pointer" }}
-                  />
-                  <Image
-                    src={require("../assests/images/cash/un3.png").default}
-                    alt="un3"
-                    style={{ cursor: "pointer" }}
-                  />
-                </div>
-              </div>
-            </Col>
+              </Col>
+            )}
+
+            {active === "winUpTo" && (
+              <Col xs={7}>
+                <WinUpToRewards />
+              </Col>
+            )}
+
+            {active === "scratchCard" && (
+              <Col>
+                <ScratchCardModal onclick={() => setActive("rewards")} />
+              </Col>
+            )}
           </Row>
         </div>
       </div>

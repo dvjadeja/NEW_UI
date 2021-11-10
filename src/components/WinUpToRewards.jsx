@@ -1,6 +1,5 @@
 import React from "react";
-import { Col, Modal, Row, Image } from "react-bootstrap";
-import background from "../assests/images/rewards/headerbg.png";
+import { Image } from "react-bootstrap";
 
 import c1r1 from "../assests/images/rewards/c1r1.png";
 import c1r2 from "../assests/images/rewards/c1r2.png";
@@ -28,24 +27,31 @@ import ofy3bg from "../assests/images/rewards/ofy3.png";
 
 import RewardCard from "./RewardCard";
 import OfyCard from "./OfyCard";
+import { useState } from "react";
+import RewardsPopup from "./RewardsPopup";
+import GiftCard from "./GiftCard";
 
 const card1 = [
   {
     text: "Gulaal",
     image: c1r1,
+    active: "gulaal",
   },
   {
     text: "Chandan",
     image: c1r2,
+    active: "chandan",
   },
   {
     text: "Glitter",
     image: c1r3,
+    active: "glitter",
   },
   {
     text: "Muddy Puddle",
     image: c1r4,
     bodyMargin: 23,
+    active: "muddy",
   },
 ];
 
@@ -53,19 +59,23 @@ const card2 = [
   {
     text: "Pichkari",
     image: c2r1,
+    active: "pichkari",
   },
   {
     text: "Balloons",
     image: c2r2,
+    active: "balloons",
   },
   {
     text: "Eggs",
     image: c2r3,
+    active: "eggs",
   },
   {
     text: "Water Bucket",
     image: c2r4,
     bodyMargin: 23,
+    active: "bucket",
   },
 ];
 
@@ -73,19 +83,23 @@ const card3 = [
   {
     text: "Gujiya",
     image: c3r1,
+    active: "gujiya",
   },
   {
     text: "Thandai",
     image: c3r2,
+    active: "thandai",
   },
   {
     text: "Puranpoli",
     image: c3r3,
+    active: "puranpoli",
   },
   {
     text: "Coconut Burfi",
     image: c3r4,
     bodyMargin: 23,
+    active: "barfi",
   },
 ];
 
@@ -93,18 +107,22 @@ const card4 = [
   {
     text: "Holi Wali Selfie",
     image: c4r1,
+    active: "selfie",
   },
   {
     text: "Holika Dehan",
     image: c4r2,
+    active: "holika dehan",
   },
   {
     text: "Holi Party",
     image: c4r3,
+    active: "holi party",
   },
   {
     text: "Rain Dance",
     image: c4r4,
+    active: "rain dance",
   },
 ];
 
@@ -132,61 +150,25 @@ const ofy = [
   },
 ];
 
-const WinUpToRewards = ({ show, setShow }) => {
+const WinUpToRewards = () => {
+  const [active, setActive] = useState("mainPage");
+  const [rewardsData, setRewardsData] = useState(false);
+  const [giftCardData, setGiftCardData] = useState(false);
   return (
     <>
-      <Modal
-        show={show}
-        onHide={() => setShow(false)}
-        fullscreen={true}
-        backdrop={false}
-        // dialogClassName="custom-modal"
-        style={{ paddingLeft: "0 !important", paddingRight: "0 !important" }}
-      >
-        <Row
-          style={{
-            padding: 10,
-            backgroundImage: `url(${background})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            height: 100,
-          }}
-        >
-          <Col className="text-left d-flex justify-content-center" xs={2}>
-            <img
-              src={require("../assests/images/back.svg").default}
-              alt="act"
-              style={{ width: 70, marginRight: 10, cursor: "pointer" }}
-              onClick={() => setShow(false)}
-            />
-          </Col>
-          <Col
-            className="text-center pt-1"
-            style={{
-              color: "black",
-              fontSize: "5vh",
-              marginTop: "auto",
-              marginBottom: "auto",
-            }}
-          >
-            Rewards
-          </Col>
-          <Col className="text-right" xs={2}>
-            <span></span>
-          </Col>
-        </Row>
-        <Modal.Body className="p-0 text-left" style={{ marginBottom: 90 }}>
-          <div className="m-2">
+      <div className="m-3 mt-0">
+        {active === "mainPage" && (
+          <div>
             <p
               className="primary"
-              style={{ fontSize: 25, marginBottom: 0, textAlign: "center" }}
+              style={{ fontSize: 20, marginBottom: 0, textAlign: "left" }}
             >
               Collect all Cards & win up to ₹10,000
             </p>
             <div
-              className="mt-3"
+              className="mt-1"
               style={{
-                background: "#F7E7CE",
+                background: "#e4b66c",
                 borderRadius: 15,
                 textAlign: "center",
                 display: "flex",
@@ -205,7 +187,7 @@ const WinUpToRewards = ({ show, setShow }) => {
                     marginTop: 10,
                   }}
                   cardStyle={{
-                    width: "10vw",
+                    width: "8vw",
                     margin: "20px 3px 25px 3px",
                     borderRadius: 10,
                   }}
@@ -218,6 +200,10 @@ const WinUpToRewards = ({ show, setShow }) => {
                   }}
                   cardImage={data.image}
                   bottomtextStyle={{ color: "#484848", fontSize: 15 }}
+                  onclick={() => {
+                    setActive(`${data.active}`);
+                    setRewardsData(data);
+                  }}
                 />
               ))}
             </div>
@@ -244,7 +230,7 @@ const WinUpToRewards = ({ show, setShow }) => {
                     marginTop: 10,
                   }}
                   cardStyle={{
-                    width: "10vw",
+                    width: "8vw",
                     margin: "20px 3px 25px 3px",
                     borderRadius: "10px",
                   }}
@@ -283,7 +269,7 @@ const WinUpToRewards = ({ show, setShow }) => {
                     marginTop: 10,
                   }}
                   cardStyle={{
-                    width: "10vw",
+                    width: "8vw",
                     margin: "20px 3px 25px 3px",
                     borderRadius: "10px",
                   }}
@@ -322,7 +308,7 @@ const WinUpToRewards = ({ show, setShow }) => {
                     marginTop: 10,
                   }}
                   cardStyle={{
-                    width: "10vw",
+                    width: "8vw",
                     margin: "20px 3px 25px 3px",
                     borderRadius: "10px",
                   }}
@@ -338,59 +324,75 @@ const WinUpToRewards = ({ show, setShow }) => {
                 />
               ))}
             </div>
-
-            <div className="mt-3">
-              <Image
-                src={require("../assests/images/rewards/bt0.png").default}
-                alt=""
-                style={{ width: "8%" }}
-              />
-              <Image
-                src={require("../assests/images/rewards/bt1.png").default}
-                alt=""
-                style={{ marginRight: 20, marginLeft: 20, width: "8%" }}
-              />
-              <Image
-                src={require("../assests/images/rewards/bt2.png").default}
-                alt=""
-                style={{ width: "8%" }}
-              />
-            </div>
-
-            <p
-              className="primary"
-              style={{
-                fontSize: 20,
-                marginBottom: 0,
-                textAlign: "left",
-                marginTop: 10,
-              }}
-            >
-              Offer for you
-            </p>
-
-            <div className="horizontal-scroll mt-3">
-              {ofy.map((data, index) => (
-                <OfyCard
-                  {...data}
-                  key={index}
-                  textStyle={{
-                    color: data.color,
-                    fontSize: 12,
-                    whiteSpace: "normal",
-                  }}
-                  titleStyle={{
-                    color: data.color,
-                    fontSize: 15,
-                    whiteSpace: "normal",
-                    marginRight: 40,
-                  }}
-                />
-              ))}
-            </div>
           </div>
-        </Modal.Body>
-      </Modal>
+        )}
+
+        {active === "chandan" && (
+          <RewardsPopup
+            data={rewardsData}
+            onclick={() => setActive("mainPage")}
+          />
+        )}
+
+        {active === "giftCard" && (
+          <GiftCard data={giftCardData} onclick={() => setActive("mainPage")} />
+        )}
+
+        <div className="mt-3 d-flex align-items-left">
+          <Image
+            src={require("../assests/images/rewards/bt0.png").default}
+            alt=""
+            style={{ width: "25%" }}
+          />
+          <Image
+            src={require("../assests/images/rewards/bt1.png").default}
+            alt=""
+            style={{ marginRight: 20, marginLeft: 20, width: "25%" }}
+          />
+          <Image
+            src={require("../assests/images/rewards/bt2.png").default}
+            alt=""
+            style={{ width: "25%" }}
+          />
+        </div>
+
+        <p
+          className="primary"
+          style={{
+            fontSize: 20,
+            marginBottom: 0,
+            textAlign: "left",
+            marginTop: 10,
+          }}
+        >
+          Offer for you
+        </p>
+
+        <div className="horizontal-scroll mt-2 d-flex">
+          {ofy.map((data, index) => (
+            <OfyCard
+              {...data}
+              key={index}
+              textStyle={{
+                color: data.color,
+                fontSize: 12,
+                whiteSpace: "normal",
+              }}
+              titleStyle={{
+                color: data.color,
+                fontSize: 15,
+                whiteSpace: "normal",
+                marginRight: 20,
+                marginBottom: 10,
+              }}
+              onclick={() => {
+                setActive("giftCard");
+                setGiftCardData(data);
+              }}
+            />
+          ))}
+        </div>
+      </div>
     </>
   );
 };
