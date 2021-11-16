@@ -7,6 +7,7 @@ import UnotagPointsModal from "../components/UnotagPointsModal";
 import { useHistory } from "react-router";
 import WinUpToRewards from "../components/WinUpToRewards";
 import ScratchCardModal from "../components/ScratchCard";
+import VoucherCard from "../components/VoucherCard";
 
 const RewardsAndCashback = () => {
   const history = useHistory();
@@ -242,6 +243,7 @@ const RewardsAndCashback = () => {
                       src={require("../assests/images/cash/un1.png").default}
                       alt="un1"
                       style={{ cursor: "pointer" }}
+                      onClick={() => setActive("voucher")}
                     />
                     <Image
                       src={require("../assests/images/cash/un2.png").default}
@@ -260,13 +262,22 @@ const RewardsAndCashback = () => {
 
             {active === "winUpTo" && (
               <Col xs={7}>
-                <WinUpToRewards />
+                <WinUpToRewards onclick={() => setActive("rewards")} />
               </Col>
             )}
 
             {active === "scratchCard" && (
               <Col>
                 <ScratchCardModal onclick={() => setActive("rewards")} />
+              </Col>
+            )}
+
+            {active === "voucher" && (
+              <Col xs={6}>
+                <VoucherCard
+                  onclick={() => setActive("rewards")}
+                  image={require("../assests/images/cash/un1.png").default}
+                />
               </Col>
             )}
           </Row>

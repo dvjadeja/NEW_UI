@@ -37,10 +37,20 @@ const OpportunityDetailModal = ({ showDetail, setShowDetail }) => {
             onBack={() => setShowDetail(false)}
           />
         </Modal.Header>
-        <Modal.Body style={{ marginBottom: 20, padding: 20, marginTop: 5 }}>
-          <>
+        <Modal.Body
+          style={{
+            marginBottom: 20,
+            paddingLeft: "20px !important",
+            marginTop: 5,
+          }}
+        >
+          <div style={{ paddingLeft: 20 }}>
             <div
-              style={{ borderBottom: "2px solid #80808063", marginBottom: 10 }}
+              style={{
+                borderBottom: "2px solid #80808063",
+                marginBottom: 10,
+                paddingLeft: "20px",
+              }}
             >
               <h3>Incentive Under Incentive Achivement Novemeber |</h3>
               <p></p>
@@ -66,7 +76,7 @@ const OpportunityDetailModal = ({ showDetail, setShowDetail }) => {
               <p className="mb-2 text-grey">Rules for Rewards</p>
               <p className="text-grey">Mention the rules to earn rewards</p>
             </div>
-          </>
+          </div>
         </Modal.Body>
       </Modal>
     </>

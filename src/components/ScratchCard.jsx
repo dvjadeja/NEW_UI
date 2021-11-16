@@ -22,18 +22,33 @@ const ScratchCardModal = ({ onclick }) => {
           textAlign: "left",
           marginTop: "40px",
           marginLeft: "80px",
-          position: "relative",
+          width: 290,
+          marginRight: 80,
         }}
       >
-        <Image
-          src={close}
-          alt="close"
-          className="modal-close"
-          style={{ right: 48, cursor: "pointer" }}
-          onClick={onclick}
-        />
+        <div style={{ position: "relative" }}>
+          <span className="modal-close" style={{ right: -6 }}>
+            <Image
+              src={close}
+              alt="close"
+              style={{
+                cursor: "pointer",
+              }}
+              onClick={onclick}
+            />
+          </span>
+        </div>
         <ScratchCard {...settings}>
-          <div className="text-center">
+          <div
+            className="text-center"
+            style={{
+              background: "white",
+              height: 335,
+              borderRadius: 10,
+              position: "relative",
+              top: 5,
+            }}
+          >
             <Image src={scimg} alt="scimg" className="mt-3" />
             <p className="mt-1 mb-0">You Win</p>
             <p

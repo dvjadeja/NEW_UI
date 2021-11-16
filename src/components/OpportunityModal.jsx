@@ -36,7 +36,7 @@ const OpportunityModal = ({ show, setShow }) => {
             marginBottom: 20,
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
+            marginTop: 20,
             flexDirection: "column",
           }}
         >
@@ -52,7 +52,7 @@ const OpportunityModal = ({ show, setShow }) => {
                   borderRadius: 10,
                 }}
               >
-                <div style={{ height: "400px", marginBottom: 60 }}>
+                <div style={{ height: "250px", marginBottom: 60 }}>
                   <CircularProgressbarWithChildren
                     value={50}
                     styles={buildStyles({
@@ -70,35 +70,37 @@ const OpportunityModal = ({ show, setShow }) => {
               </Card>
             </Col>
           </Row>
-          <Row>
-            {arr.map((index) => (
-              <Col key={index}>
-                <Card
-                  className="scroll-card"
-                  style={{
-                    width: "43vw",
-                    background:
-                      "linear-gradient(150deg, rgb(71, 141, 11), rgb(36, 71, 6) 100%)",
-                    color: "white",
-                    margin: 5,
-                    borderRadius: 10,
-                  }}
-                >
-                  <Card.Body>
-                    <Card.Title>
-                      Achivement Under Incentive Achivement November |
-                    </Card.Title>
-                    <span
-                      style={{ borderBottom: "1px solid", fontWeight: 900 }}
-                      onClick={() => setOppShow(true)}
-                    >
-                      View Details
-                    </span>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
+          <div style={{ paddingRight: 10 }}>
+            <Row>
+              {arr.map((index) => (
+                <Col key={index} xs={6}>
+                  <Card
+                    className="scroll-card"
+                    style={{
+                      width: "100%",
+                      background:
+                        "linear-gradient(150deg, rgb(71, 141, 11), rgb(36, 71, 6) 100%)",
+                      color: "white",
+                      margin: 5,
+                      borderRadius: 10,
+                    }}
+                  >
+                    <Card.Body>
+                      <Card.Title>
+                        Achivement Under Incentive Achivement November |
+                      </Card.Title>
+                      <span
+                        style={{ borderBottom: "1px solid", fontWeight: 900 }}
+                        onClick={() => setOppShow(true)}
+                      >
+                        View Details
+                      </span>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </div>
         </Modal.Body>
       </Modal>
     </>

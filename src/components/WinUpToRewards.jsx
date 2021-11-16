@@ -1,6 +1,8 @@
 import React from "react";
 import { Image } from "react-bootstrap";
 
+import close from "../assests/images/back.svg";
+
 import c1r1 from "../assests/images/rewards/c1r1.png";
 import c1r2 from "../assests/images/rewards/c1r2.png";
 import c1r3 from "../assests/images/rewards/c1r3.png";
@@ -150,7 +152,7 @@ const ofy = [
   },
 ];
 
-const WinUpToRewards = () => {
+const WinUpToRewards = ({ onclick }) => {
   const [active, setActive] = useState("mainPage");
   const [rewardsData, setRewardsData] = useState(false);
   const [giftCardData, setGiftCardData] = useState(false);
@@ -163,6 +165,12 @@ const WinUpToRewards = () => {
               className="primary"
               style={{ fontSize: 20, marginBottom: 0, textAlign: "left" }}
             >
+              <Image
+                src={close}
+                width={40}
+                onClick={onclick}
+                style={{ cursor: "pointer" }}
+              />
               Collect all Cards & win up to ₹10,000
             </p>
             <div
@@ -201,7 +209,7 @@ const WinUpToRewards = () => {
                   cardImage={data.image}
                   bottomtextStyle={{ color: "#484848", fontSize: 15 }}
                   onclick={() => {
-                    setActive(`${data.active}`);
+                    setActive("card1");
                     setRewardsData(data);
                   }}
                 />
@@ -243,6 +251,10 @@ const WinUpToRewards = () => {
                   }}
                   cardImage={data.image}
                   bottomtextStyle={{ color: "#484848", fontSize: 15 }}
+                  onclick={() => {
+                    setActive("card2");
+                    setRewardsData(data);
+                  }}
                 />
               ))}
             </div>
@@ -282,6 +294,10 @@ const WinUpToRewards = () => {
                   }}
                   cardImage={data.image}
                   bottomtextStyle={{ color: "#484848", fontSize: 15 }}
+                  onclick={() => {
+                    setActive("card3");
+                    setRewardsData(data);
+                  }}
                 />
               ))}
             </div>
@@ -321,13 +337,38 @@ const WinUpToRewards = () => {
                   }}
                   cardImage={data.image}
                   bottomtextStyle={{ color: "#484848", fontSize: 15 }}
+                  onclick={() => {
+                    setActive("card4");
+                    setRewardsData(data);
+                  }}
                 />
               ))}
             </div>
           </div>
         )}
 
-        {active === "chandan" && (
+        {active === "card1" && (
+          <RewardsPopup
+            data={rewardsData}
+            onclick={() => setActive("mainPage")}
+          />
+        )}
+
+        {active === "card2" && (
+          <RewardsPopup
+            data={rewardsData}
+            onclick={() => setActive("mainPage")}
+          />
+        )}
+
+        {active === "card3" && (
+          <RewardsPopup
+            data={rewardsData}
+            onclick={() => setActive("mainPage")}
+          />
+        )}
+
+        {active === "card4" && (
           <RewardsPopup
             data={rewardsData}
             onclick={() => setActive("mainPage")}
