@@ -9,6 +9,7 @@ import electricalServiceBadge from "../assests/images/electricalServiceBadge.svg
 import pinkImg from "../assests/images/pinkImg.svg";
 import orangeImage from "../assests/images/orangeImage.svg";
 import blackImg from "../assests/images/blackImg.svg";
+import { useHistory } from "react-router";
 
 // const detailCardInfo = [
 //   {
@@ -24,6 +25,7 @@ import blackImg from "../assests/images/blackImg.svg";
 //   },
 // ];
 const ElectricalService = () => {
+  const history = useHistory();
   const [activeOptFilter, setActiveOptFilter] = useState(1);
   return (
     <>
@@ -40,7 +42,12 @@ const ElectricalService = () => {
             paddingBottom: 20,
           }}
         >
-          <Topbar back={back} title="Electrical Services" link="rewards" />
+          <Topbar
+            back={back}
+            title="Electrical Services"
+            link="rewards"
+            onBack={() => history.push("rewards")}
+          />
           <Row className="mt-3">
             <Col style={{ padding: 15 }}>
               <Row style={{ paddingLeft: "10px" }}>
