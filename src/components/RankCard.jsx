@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const RankCard = (props) => {
   return (
-    <div>
+    <div className="mb-3">
       <Row style={{ margin: 10, background: props.mainBG, borderRadius: 10 }}>
         <Col
           xs={2}

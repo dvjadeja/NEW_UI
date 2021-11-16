@@ -154,6 +154,7 @@ const Rank = () => {
           {activeOptFilter2 === 3 &&
             cityData.map((data, key) => (
               <Row
+                className="mb-3"
                 key={key}
                 style={{
                   margin: 10,
