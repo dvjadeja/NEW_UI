@@ -12,14 +12,23 @@ import settings from "../assests/images/spin/settings.svg";
 const SpinAndWin = () => {
   const history = useHistory();
 
-  const [items, setItems] = useState([
+  const items = [
     "Pizzas",
     "Sandwiches",
     "Salads",
     "Soup",
     "Japanese food",
     "Pastas",
-  ]);
+  ];
+
+  // const [items, setItems] = useState([
+  //   "Pizzas",
+  //   "Sandwiches",
+  //   "Salads",
+  //   "Soup",
+  //   "Japanese food",
+  //   "Pastas",
+  // ]);
 
   const [show, setShow] = useState(true);
   return (

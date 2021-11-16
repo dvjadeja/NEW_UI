@@ -11,10 +11,8 @@ import VoucherCard from "../components/VoucherCard";
 
 const RewardsAndCashback = () => {
   const history = useHistory();
-  const [onBack, setOnBack] = useState("/");
   const [showUnotag, setShowUnotag] = useState(false);
   const [showCashBack, setShowCashBack] = useState(false);
-  const [showUpTo, setShowUpTo] = useState(false);
   const [active, setActive] = useState("rewards");
   return (
     <>
@@ -37,7 +35,7 @@ const RewardsAndCashback = () => {
             back={back}
             title="Cashback & Rewards"
             link=""
-            onBack={() => setOnBack("/rewards-cashback")}
+            onBack={() => history.push("/")}
           />
           <Row>
             <Col>

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Image, Modal } from "react-bootstrap";
+import React from "react";
+import { Image } from "react-bootstrap";
 import Topbar from "./Topbar";
 import back from "../assests/images/back.svg";
 import { useHistory } from "react-router";

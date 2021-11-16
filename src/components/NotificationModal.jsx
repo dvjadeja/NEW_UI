@@ -103,16 +103,17 @@ const NotificationModal = ({ show, setShow }) => {
                 <Col xs={9} className="fs-10">
                   <p>{data.des}</p>
                   {data.isView && (
-                    <span
-                      style={{ marginBottom: 20 }}
-                      style={{
-                        color: "#dc7832 !important",
-                        borderBottom: "1px solid",
-                      }}
-                      className="fs-15"
-                    >
-                      View Statement {"     >"}
-                    </span>
+                    <div style={{ marginBottom: 20 }}>
+                      <span
+                        style={{
+                          color: "#dc7832 !important",
+                          borderBottom: "1px solid",
+                        }}
+                        className="fs-15"
+                      >
+                        View Statement {"     >"}
+                      </span>
+                    </div>
                   )}
                 </Col>
                 <Col xs={2}>

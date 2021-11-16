@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useHistory } from "react-router";
 import { Form, FormGroup, Label, Input } from "reactstrap";
 
 import Topbar from "../components/Topbar";
@@ -37,10 +38,11 @@ const states = [
 ];
 
 const EditProfile = () => {
+  const history = useHistory();
   const Extra = () => (
     <p style={{ marginTop: 7, marginBottom: 0, cursor: "pointer" }}>Save</p>
   );
-  const [onBack, setOnBack] = useState("/profile");
+  // const [onBack, setOnBack] = useState("/profile");
   return (
     <>
       <div>
@@ -58,7 +60,7 @@ const EditProfile = () => {
             back={back}
             title="Profile"
             link=""
-            onBack={() => setOnBack("/profile")}
+            onBack={() => history.push("profile")}
             extra={Extra}
           />
           <Form style={{ textAlign: "left", padding: 20 }}>

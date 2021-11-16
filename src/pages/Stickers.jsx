@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Topbar from "../components/Topbar";
 import back from "../assests/images/back.svg";
 import { Col, Image, Row } from "react-bootstrap";
+import { useHistory } from "react-router";
 
 const Stickers = () => {
-  const [onBack, setOnBack] = useState("/");
+  const history = useHistory();
   return (
     <>
       <div>
@@ -22,7 +23,7 @@ const Stickers = () => {
             back={back}
             title="Sticker Shelf"
             link=""
-            onBack={() => setOnBack("/rewards-cashback")}
+            onBack={() => history.push("/rewards-cackback")}
           />
           <div>
             <p style={{ margin: 0 }}>UNO TAG Stickers are here!</p>

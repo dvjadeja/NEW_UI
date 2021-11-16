@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import Topbar from "../components/Topbar";
 import back from "../assests/images/back.svg";
 import { Col, Row } from "react-bootstrap";
@@ -98,8 +99,8 @@ const cityData = [
   },
 ];
 const Rank = () => {
+  const history = useHistory();
   const [activeOptFilter2, setActiveOptFilter2] = useState(1);
-  const [onBack, setOnBack] = useState("/");
   const [show, setShow] = useState(false);
   return (
     <>
@@ -115,7 +116,12 @@ const Rank = () => {
             boxShadow: "0px 6px 14px 5px rgba(201,201,201,1)",
           }}
         >
-          <Topbar back={back} title="" link="" onBack={() => setOnBack("/")} />
+          <Topbar
+            back={back}
+            title=""
+            link=""
+            onBack={() => history.push("/")}
+          />
           <Row style={{ paddingLeft: 10, marginTop: 20 }}>
             {optFilter.map(({ title, key }) => (
               <Col className="mb-3" key={key} xxl={4} xl={4} lg={4} md={6}>

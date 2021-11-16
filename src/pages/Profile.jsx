@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router";
 import Topbar from "../components/Topbar";
 import back from "../assests/images/back.svg";
@@ -7,7 +7,6 @@ import profileImg from "../assests/profileImg.png";
 
 const Profile = () => {
   const history = useHistory();
-  const [onBack, setOnBack] = useState("/");
   const Extra = () => (
     <p
       onClick={() => history.push({ pathname: "/edit-profile" })}
@@ -33,7 +32,7 @@ const Profile = () => {
             back={back}
             title="Profile"
             link=""
-            onBack={() => setOnBack("/")}
+            onBack={() => history.push("/")}
             extra={Extra}
           />
           <div

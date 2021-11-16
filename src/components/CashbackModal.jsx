@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Modal, Table } from "react-bootstrap";
 import Topbar from "./Topbar";
 import back from "../assests/images/back.svg";
 import wallet from "../assests/images/cash/wallet.png";
 
 const CashbackModal = ({ show, setShow }) => {
-  const [onBack, setOnBack] = useState("/rewards-cashback");
   return (
     <>
       <Modal
@@ -21,7 +20,7 @@ const CashbackModal = ({ show, setShow }) => {
             back={back}
             title="Cashback Won"
             link=""
-            onBack={() => setOnBack("/rewards-cashback")}
+            onBack={() => setShow(false)}
           />
         </Modal.Header>
         <Modal.Body style={{ margin: 20 }} className="p-0 text-left">

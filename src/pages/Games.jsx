@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import Topbar from "../components/Topbar";
 import back from "../assests/images/back.svg";
 import { useState } from "react";
+import { useHistory } from "react-router";
 import ActiveBadge from "../components/ActiveBadge";
 import UpcomingCard from "../components/UpcomingCard";
 import HistoryCard from "../components/HistoryCard";
@@ -143,8 +144,8 @@ const historyData = [
 ];
 
 const Games = () => {
+  const history = useHistory();
   const [activeOptFilter, setActiveOptFilter] = useState(1);
-  const [onBack, setOnBack] = useState("/");
   return (
     <>
       <div>
@@ -158,7 +159,12 @@ const Games = () => {
             boxShadow: "0px 6px 14px 5px rgba(201,201,201,1)",
           }}
         >
-          <Topbar back={back} title="" link="" onBack={() => setOnBack("/")} />
+          <Topbar
+            back={back}
+            title=""
+            link=""
+            onBack={() => history.push("/")}
+          />
           <Row className="mt-3 mb-3">
             <Col style={{ padding: 15, paddingBottom: 0 }}>
               <div style={{ width: "50%" }}>

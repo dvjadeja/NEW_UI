@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   AiOutlineGlobal,
   AiOutlineBell,
@@ -16,7 +16,6 @@ import SwitchComponent from "../components/SwitchComponent";
 
 const Settings = () => {
   const history = useHistory();
-  const [show, setShow] = useState(false);
   return (
     <>
       <div>
@@ -27,7 +26,6 @@ const Settings = () => {
               title="Settings"
               link=""
               onBack={() => {
-                setShow(false);
                 history.push("/");
               }}
             />
