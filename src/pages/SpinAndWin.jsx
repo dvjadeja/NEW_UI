@@ -8,18 +8,25 @@ import Wheel from "./Wheel";
 import coins from "../assests/images/spin/coins.svg";
 import gift from "../assests/images/spin/gift.svg";
 import settings from "../assests/images/spin/settings.svg";
+import stone from "../assests/images/spin/stone.svg";
+import crown from "../assests/images/spin/crown.png";
+import bulb from "../assests/images/spin/bulb.png";
+import hammer from "../assests/images/spin/hammer.png";
+import toolbox from "../assests/images/spin/toolbox.png";
 
 const SpinAndWin = () => {
   const history = useHistory();
-
-  const items = [
-    "Pizzas",
-    "Sandwiches",
-    "Salads",
-    "Soup",
-    "Japanese food",
-    "Pastas",
-  ];
+  // eslint-disable-next-line
+  const [items, setItems] = useState([
+    coins,
+    gift,
+    settings,
+    crown,
+    stone,
+    bulb,
+    hammer,
+    toolbox,
+  ]);
 
   // const [items, setItems] = useState([
   //   "Pizzas",

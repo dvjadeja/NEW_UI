@@ -44,7 +44,13 @@ export default class Wheel extends React.Component {
                 key={index}
                 style={{ "--item-nb": index }}
               >
-                {item}
+                <div style={{ width: 60 }}>
+                  <img
+                    src={item}
+                    alt=""
+                    style={{ width: item[3] ? "74%" : "100%" }}
+                  />
+                </div>
               </div>
             ))}
           </div>

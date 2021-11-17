@@ -15,6 +15,7 @@ import RewardsAndCashback from "./pages/RewardsAndCashback";
 import Settings from "./pages/Settings";
 import SpinAndWin from "./pages/SpinAndWin";
 import Stickers from "./pages/Stickers";
+import Journey from "./components/Journey";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/settings" component={Settings} />
           <Route path="/rewards-cashback" component={RewardsAndCashback} />
           <Route path="/stickers" component={Stickers} />
+          <Route path="/journey" component={Journey} />
         </Switch>
       </BrowserRouter>
     </div>
