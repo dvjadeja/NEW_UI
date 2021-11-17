@@ -29,6 +29,8 @@ const Journey = () => {
             overflowX: "hidden",
             height: 558,
             marginTop: 100,
+            position: "relative",
+            width: "74vw",
           }}
         >
           <Row style={{ paddingTop: 10 }}>
@@ -254,7 +256,7 @@ const Journey = () => {
                 style={{
                   position: "absolute",
                   right: 10,
-                  bottom: 107,
+                  bottom: 0,
                   width: 200,
                 }}
               >
@@ -322,11 +324,11 @@ const Journey = () => {
             ) : (
               <div
                 style={{
-                  bottom: 200,
+                  bottom: 65,
                   width: 80,
                   height: 60,
                   position: "absolute",
-                  right: 0,
+                  right: 10,
                   background: "#FAD6A5 0% 0% no-repeat padding-box",
                   borderRadius: 10,
                   border: "1px solid #FFFFFF",
