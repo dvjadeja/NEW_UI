@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import CelebrationConfetti from "../components/CelebrationConffetti";
 import "../components/Wheel.css";
 
 export default class Wheel extends React.Component {
@@ -7,8 +8,10 @@ export default class Wheel extends React.Component {
     super(props);
     this.state = {
       selectedItem: null,
+      active: false,
     };
     this.selectItem = this.selectItem.bind(this);
+    this.conffetti = this.conffetti.bind(this);
   }
 
   selectItem() {
@@ -20,8 +23,14 @@ export default class Wheel extends React.Component {
       this.setState({ selectedItem });
     } else {
       this.setState({ selectedItem: null });
-      setTimeout(this.selectItem, 500);
+      setTimeout(this.selectItem, 100);
     }
+  }
+
+  conffetti() {
+    return setTimeout(() => {
+      this.setState({ active: true });
+    }, 2300);
   }
 
   render() {
@@ -35,39 +44,45 @@ export default class Wheel extends React.Component {
     const spinning = selectedItem !== null ? "spinning" : "";
 
     return (
-      <div>
-        <div className="wheel-container">
-          <div className={`wheel ${spinning}`} style={wheelVars}>
-            {items.map((item, index) => (
-              <div
-                className="wheel-item"
-                key={index}
-                style={{ "--item-nb": index }}
-              >
-                <div style={{ width: 60 }}>
-                  <img
-                    src={item}
-                    alt=""
-                    style={{ width: item[3] ? "74%" : "100%" }}
-                  />
+      <>
+        <CelebrationConfetti active={this.state.active} />
+        <div>
+          <div className="wheel-container">
+            <div className={`wheel ${spinning}`} style={wheelVars}>
+              {items.map((item, index) => (
+                <div
+                  className="wheel-item"
+                  key={index}
+                  style={{ "--item-nb": index }}
+                >
+                  <div style={{ width: 60 }}>
+                    <img
+                      src={item}
+                      alt=""
+                      style={{ width: item[3] ? "74%" : "100%" }}
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+          <div style={{ textAlign: "center", marginTop: "50px" }}>
+            <Button
+              style={{
+                background: "#7C0000 0% 0% no-repeat padding-box",
+                width: "218px",
+                borderRadius: "20px",
+              }}
+              onClick={() => {
+                this.selectItem();
+                this.conffetti();
+              }}
+            >
+              SPIN THE WHEEL
+            </Button>
           </div>
         </div>
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
-          <Button
-            style={{
-              background: "#7C0000 0% 0% no-repeat padding-box",
-              width: "218px",
-              borderRadius: "20px",
-            }}
-            onClick={this.selectItem}
-          >
-            SPIN THE WHEEL
-          </Button>
-        </div>
-      </div>
+      </>
     );
   }
 }
